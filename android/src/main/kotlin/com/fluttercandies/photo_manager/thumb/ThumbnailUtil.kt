@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.net.Uri
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.Priority
 import com.bumptech.glide.request.FutureTarget
 import com.bumptech.glide.request.RequestOptions
@@ -31,6 +32,7 @@ object ThumbnailUtil {
                 .asBitmap()
                 .apply(RequestOptions().frame(frame).priority(Priority.IMMEDIATE))
                 .load(File(path))
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .submit(width, height).get()
             val bos = ByteArrayOutputStream()
             resource.compress(format, quality, bos)
@@ -57,6 +59,7 @@ object ThumbnailUtil {
                 .asBitmap()
                 .apply(RequestOptions().frame(frame).priority(Priority.IMMEDIATE))
                 .load(uri)
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .submit(width, height).get()
             val bos = ByteArrayOutputStream()
             resource.compress(format, quality, bos)
