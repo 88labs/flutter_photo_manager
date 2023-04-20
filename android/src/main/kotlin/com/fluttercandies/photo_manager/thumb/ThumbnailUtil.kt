@@ -34,6 +34,7 @@ object ThumbnailUtil {
                 .apply(RequestOptions().frame(frame).priority(Priority.IMMEDIATE))
                 .load(entity.getUri())
                 .signature(ObjectKey(entity.modifiedDate))
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .submit(width, height).get()
             val bos = ByteArrayOutputStream()
             resource.compress(format, quality, bos)
@@ -52,6 +53,7 @@ object ThumbnailUtil {
             .asBitmap()
             .apply(RequestOptions().frame(thumbLoadOption.frame).priority(Priority.LOW))
             .load(uri)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
             .submit(thumbLoadOption.width, thumbLoadOption.height)
     }
 
