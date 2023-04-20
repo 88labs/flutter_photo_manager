@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.net.Uri
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.FutureTarget
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.signature.ObjectKey
