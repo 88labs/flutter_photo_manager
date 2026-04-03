@@ -12,9 +12,9 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@50fbc622fc4ef5163becd7fab6573eac35f8462e # v1.2.0
       - name: Publish
-        uses: sakebook/actions-flutter-pub-publisher@v1.3.1
+        uses: sakebook/actions-flutter-pub-publisher@7112915a1a834881d4c98ef7af12f3456e5c79c7 # v1.3.1
         with:
           credential: ${{ secrets.CREDENTIAL_JSON }}
           flutter_package: false
