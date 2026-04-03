@@ -16,7 +16,8 @@ jobs:
           java-version: "12.x"
       - uses: subosito/flutter-action@4389e6cbc6cb8a4b18c628ff96ff90be0e926aa8 # v1.5.3
         with:
-          channel: beta
+          channel: stable
+          flutter-version: 2.2.3
       - run: flutter pub get
       - run: flutter analyze lib example/lib
       - run: cd example ; flutter build ios --no-codesign
@@ -34,7 +35,8 @@ jobs:
           java-version: "12.x"
       - uses: subosito/flutter-action@4389e6cbc6cb8a4b18c628ff96ff90be0e926aa8 # v1.5.3
         with:
-          channel: beta
+          channel: stable
+          flutter-version: 2.2.3
       - run: flutter pub get
       - run: flutter analyze lib example/lib
       - run: flutter config --enable-macos-desktop
@@ -53,7 +55,8 @@ jobs:
           java-version: "12.x"
       - uses: subosito/flutter-action@4389e6cbc6cb8a4b18c628ff96ff90be0e926aa8 # v1.5.3
         with:
-          channel: beta
+          channel: stable
+          flutter-version: 2.2.3
       - run: flutter pub get
       - run: flutter analyze lib example/lib
       - run: sudo echo "y" | sudo $ANDROID_HOME/tools/bin/sdkmanager "ndk;20.0.5594570"
