@@ -2,6 +2,9 @@ name: CI
 
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 jobs:
   test_iOS:
     name: Test iOS on ${{ matrix.os }}
